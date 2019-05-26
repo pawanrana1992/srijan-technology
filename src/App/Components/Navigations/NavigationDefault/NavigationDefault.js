@@ -21,7 +21,7 @@ class NavigationDefault extends React.Component {
                         <ul className={'navs'}>
                             <li className="nav_list">
                                 <div className="brand link">
-                                    <Link to="#"><span style={{fontWeight:'700',color:'#ffffff'}}>Srijan</span></Link>
+                                    <Link to="#"><span style={{fontWeight:'900',textTransform:'uppercase',fontSize:'2.5em',textDecoration:'none', color:'#ffffff'}}>Srijan</span></Link>
                                 </div>
                             </li>
                             <li className={'nav_list res'}>
