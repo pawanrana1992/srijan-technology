@@ -1,11 +1,11 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import HeroIntro from "../../Components/HeroIntro/HeroIntro";
 import IntroGrid from "../../Components/IntroGrid/IntroGrid";
 import {Col, Grid, Row} from "react-flexbox-grid";
 import MdArrowDropright from "react-ionicons/lib/MdArrowDropright";
-import ProductCard from "../../Components/Cards/ProductCard/ProductCard";
 import NewStuffSec from "../../Components/NewStuffSec/NewStuffSec";
 import {Products} from '../../MocData/MocData';
+const ProductCard = lazy(()=>import("../../Components/Cards/ProductCard/ProductCard")) ;
 
 class IndexPage extends React.PureComponent{
     render() {
@@ -36,7 +36,9 @@ class IndexPage extends React.PureComponent{
                     <Row>
                         {Products.map((prod)=>
                             <Col xs={12} key={prod.id} sm={6} md={4} lg={3}>
-                                <ProductCard {...prod}/>
+                                <Suspense fallback={<h1>Loading...</h1>}>
+                                    <ProductCard {...prod}/>
+                                </Suspense>
                             </Col>
                         )}
 

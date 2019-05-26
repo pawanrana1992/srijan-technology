@@ -1,7 +1,8 @@
 {
-  "name": "gadget-ecom",
+  "name": "srijan-test",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://pawanrana1992.github.io/srijan-technology",
   "dependencies": {
     "autoprefixer": "^9.5.1",
     "babel-plugin-import": "^1.11.2",
@@ -23,7 +24,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +45,7 @@
   },
   "devDependencies": {
     "customize-cra": "^0.2.12",
+    "gh-pages": "^2.0.1",
     "react-app-rewired": "^2.1.3"
   }
 }

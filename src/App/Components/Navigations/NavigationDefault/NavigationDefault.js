@@ -13,7 +13,6 @@ class NavigationDefault extends React.Component {
        this.props.dispatch({type:Actions.SHOW_HIDE_PRODUCT_SIDEBAR_CART})
     };
     render() {
-        console.log('in navigation:', this.props);
         return (
             <nav className={'nav nav__default'}>
                 <div className="nav__wrap">
