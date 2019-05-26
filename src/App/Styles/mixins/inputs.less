@@ -1,0 +1,92 @@
+
+.input-variant(
+  @paddingY:@spacer,
+@paddingX:@spacer,
+@backgroundColor:@white,
+@border-color:@black,
+@color:@black,
+@borderRadius:0.3
+) {
+  padding: @paddingY @paddingX;
+  color: @color;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &::-webkit-input-placeholder {
+    color:@placeholder-color;
+  }
+  &:-moz-placeholder {
+    color:lighten(@color,25%);
+
+  }
+  &::-moz-placeholder {
+    color:@placeholder-color;
+
+  }
+  &:-ms-input-placeholder {
+    color:@placeholder-color;
+
+  }
+  .border-radius(unit(@borderRadius, @unit));
+  background-color: @backgroundColor;
+  border: 1px solid @border-color;
+  .box-shadow(none);
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] {
+    background-color: darken(@backgroundColor, 15%);
+    border-color: darken(@border-color, 15%);
+    outline: none;
+  }
+
+  &:focus,
+  &.focus, &:active,
+  &.active {
+    outline: none;
+    color: @color;
+    background-color: @white;
+    border-color: darken(@primary, 25%);
+    border-width: unit(0.2, @unit);
+    padding: (@paddingY - 0.1) (@paddingX - 0.09);
+  }
+  &.has-error {
+    outline: none;
+    color: @color;
+    background-color: lighten(@primary, 40%);
+    border-color: darken(@primary, 25%);
+    border-width: unit(0.2, @unit);
+    padding: (@paddingY - 0.1) (@paddingX - 0.09);
+    &:focus,
+    &.focus, &:active,
+    &.active {
+      outline: none;
+      color: @color;
+      background-color: lighten(@primary, 44%);
+      border-color: darken(@primary, 25%);
+      border-width: unit(0.2, @unit);
+      padding: (@paddingY - 0.1) (@paddingX - 0.09);
+    }
+  }
+  &.has-success {
+    outline: none;
+    color: @color;
+    border-color: darken(@success, 10%);
+    border-width: unit(0.2, @unit);
+    padding: (@paddingY - 0.1) (@paddingX - 0.09);
+    &:focus,
+    &.focus, &:active,
+    &.active {
+      outline: none;
+      color: @color;
+      border-color: darken(@success, 15%);
+      border-width: unit(0.2, @unit);
+      padding: (@paddingY - 0.1) (@paddingX - 0.09);
+    }
+  }
+}

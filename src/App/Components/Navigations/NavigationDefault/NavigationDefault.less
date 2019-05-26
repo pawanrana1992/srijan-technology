@@ -1,0 +1,164 @@
+@import "../../../Styles/export_to_component";
+
+.nav {
+  position: relative;
+  .clearfix;
+  &__default {
+    background-color: @navBg;
+    .nav__wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      &__right {
+        flex: 1 60%;
+        justify-content: flex-end;
+        .navs {
+          .nav_list {
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+        .dt {
+          text-align: right;
+        }
+      }
+      &__left {
+        flex: 1 40%;
+        .navs {
+          .nav_list {
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      &__left, &__right {
+        display: flex;
+        flex-wrap: wrap;
+        .navs {
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          align-items: center;
+          .nav_list {
+            position: relative;
+            margin: 0 @spacer;
+            .link {
+              cursor: pointer;
+              padding: unit((@spacer/2), @unit) @spacer;
+              display: flex;
+              flex-wrap: nowrap;
+              align-items: center;
+              &.fill {
+                background-color: @primary;
+                .ic {
+                  svg {
+                    path {
+                      fill: @white;
+                    }
+                  }
+                }
+              }
+              .ic {
+                padding: unit((@spacer/2), @unit);
+                font-size: unit((@baseFontSize * 1.5), @unit);
+                svg {
+                  path {
+                    fill: @primary;
+                  }
+                }
+                &.circle-bg {
+                  height: 46px;
+                  width: 46px;
+                  .border-radius(50%);
+                  background-color: @primary;
+                  svg {
+                    path {
+                      fill: @white;
+                    }
+                  }
+                }
+              }
+              .dt {
+                padding-left: unit((@spacer / 2), @unit);
+                position: relative;
+                > span {
+                  color: @primary;
+                  display: block;
+                  margin-bottom: unit((@spacer /3), @unit);
+                  font-size: unit((@baseFontSize - 0.07), @unit);
+                }
+                > b {
+                  color: @white;
+                }
+                .nv-btn {
+                  position: relative;
+                  .border-radius(unit(4em, @unit));
+                  border: 1px solid @white;
+                  padding: unit((@spacer/2), @unit) @spacer;
+                  color: @white;
+                }
+                &.cart {
+                  > b {
+                    > span {
+                      display: inline-block;
+                      &:last-child {
+                        margin-left: unit((@spacer/2), @unit);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    //  media queries
+      @media screen and (max-width: 991px) {
+        .res{
+          display: none;
+        }
+      }
+    }
+
+  }
+  &__inline {
+    background-color: @white;
+    .clearfix;
+    position: relative;
+    &_wrap {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .link {
+        flex: 1 1;
+        > a, > div, > span {
+          .transition(all 200ms ease-in-out);
+          &.active {
+            background-color: @primary;
+            color: @white;
+            &:hover {
+              color: @white;
+            }
+          }
+          &:hover {
+            color: @primary;
+          }
+          text-align: center;
+          display: block;
+          text-decoration: none;
+          color: darken(@white, 50%);
+          padding: @spacer;
+        }
+      }
+    }
+  }
+}

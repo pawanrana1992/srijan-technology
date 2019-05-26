@@ -1,0 +1,35 @@
+@import "../../Styles/export_to_component";
+.new-stf-sec{
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  .clearfix;
+  background-color: lighten(@bodyBg,5%);
+  display: flex;
+  align-items: center;
+  justify-content:center ;
+  .body{
+    padding: (@spacer*8) @spacer;
+    text-align: center;
+    background-color: rgba(@black,0.5);
+    color:@white;
+    width: 100%;
+    .title{
+      .clearfix;
+      display: block;
+      font-size: (@baseFontSize*4);
+      margin: 0 0 (@spacer / 2);
+
+    }
+    p{
+      font-size: (@baseFontSize*2);
+    }
+    .btn {
+      cursor: pointer;
+      .button-variant(@white, @primary, @primary);
+      .button-size(1em, 2em, unit((@baseFontSize*1.5), @unit), @baseFontSize, 4em);
+    }
+  }
+}

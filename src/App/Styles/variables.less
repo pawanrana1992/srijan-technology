@@ -1,0 +1,36 @@
+//note: global variable are defined in config-overrides.js file
+
+//here we are only using local variable which will be extended from global variable
+//grayscale
+@white: #ffffff;
+@black: #000000;
+
+//app colors
+@primary: #f8192c;
+@secondary: #3c5a9a;
+@success: #e1fb13;
+@warning: #ffcc01;
+
+@placeholder-color: #a5a6ab;
+@bodyBg: #161719;
+@bodyColor: #808185;
+@linkColor:@primary;
+
+
+//unit
+@unit: em;
+//spacing
+@spacer: unit(1,@unit);
+@gutter-width:unit((@spacer * 3),@unit);
+
+//fonts
+@baseFontSize: unit(0.85,@unit);
+@baseFontFamily: 'Roboto', sans-serif;
+
+
+//container width
+@containerMaxWidth:unit(90,@unit);
+
+//navigation
+@navBg: lighten(@bodyBg,12%);
+

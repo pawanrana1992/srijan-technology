@@ -1,0 +1,74 @@
+@import "../Styles/export_to_component";
+.btn.more{
+  margin: (@spacer*1.5) auto (@spacer*3);
+  cursor: pointer;
+  .button-variant(@white,@primary,@primary);
+  .button-size(0.5em, 1em,unit((@baseFontSize*1.5),@unit),@baseFontSize,4em);
+  svg{
+    path{
+      fill:@white;
+    }
+  }
+  >*{
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.popular-tl{
+  position: relative;
+  .clearfix;
+  background-color: @black;
+  margin-bottom: (@gutter-width / 2);
+  padding: @spacer 0;
+  @media screen and (max-width:991px) {
+    b{
+      text-align: center;
+    }
+    .btn{
+      margin:0 auto @spacer;
+
+    }
+    .right{
+      text-align: center !important;
+    }
+  }
+    b{
+    display: block;
+    margin-bottom: @spacer;
+
+  }
+  .btn{
+    margin-bottom: @spacer;
+    margin-right: @spacer;
+    cursor: pointer;
+    .button-variant(@bodyColor,transparent,@bodyColor);
+    .button-size(0.5em, 1em,unit((@baseFontSize),@unit),@baseFontSize,4em);
+    &.active{
+      .button-variant(@black,@white,@white);
+      .button-size(0.5em, 1em,unit((@baseFontSize),@unit),@baseFontSize,4em);
+    }
+  }
+  .left{
+    color:@white;
+  }
+  .center{
+    text-align: center;
+  }
+  .right{
+    text-align: right;
+    .btn{
+      cursor: pointer;
+      .button-variant(@white,@primary,@primary);
+      .button-size(0.5em, 1em,unit((@baseFontSize*1.5),@unit),@baseFontSize,4em);
+      svg{
+        path{
+          fill:@white;
+        }
+      }
+      >*{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}

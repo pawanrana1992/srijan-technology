@@ -1,0 +1,117 @@
+@import "../../Styles/export_to_component";
+.footer{
+  .clearfix;
+  position: relative;
+  width: 100%;
+  &.default{
+    background-color: lighten(@black,3%);
+    .wrap-footer{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      >*{
+        flex: 1 20%;
+        &.subs{
+          flex: 1 40%;
+          .subs-body{
+            position: relative;
+            padding:0 (@spacer*1.7);
+            color:darken(@bodyColor,15%);
+            line-height: (@baseFontSize*2);
+            form{
+              margin-bottom: @gutter-width;
+              input{
+                .input-variant((@spacer - 0.2),@spacer,@white,@black,@black,4em);
+                margin-right: @spacer;
+                margin-bottom: @spacer;
+              }
+              .btn{
+                margin-bottom: @spacer;
+                .button-variant(@white,@primary,@primary);
+                .button-size((@spacer - 0.3), @spacer, unit((@baseFontSize*1.5), @unit), @baseFontSize, 4em);
+              }
+            }
+            .cont{
+              .clearfix;
+              position: relative;
+              display: block;
+              b{
+                color:@white;
+                display: block;
+                margin-bottom: @spacer;
+              }
+              .lk{
+                display: flex;
+                width: 100%;
+                align-items: center;
+                .link{
+                  padding: @spacer;
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+                  svg{
+                    path{
+                    fill:@primary;
+                  }
+                  }
+                  .lk-op{
+                    display: inline-block;
+                    padding-left: @spacer;
+                    text-decoration: none;
+                    span{
+                      color:@primary;
+                      font-size: (@baseFontSize - 0.05);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+      .hdr{
+        padding: (@gutter-width/2);
+        background-color: lighten(@black,1%);
+        font-weight: 900;
+        text-transform: uppercase;
+        color:@white;
+      }
+      .ul-wrap{
+        position: relative;
+        display: block;
+        list-style: none;
+        padding:0 (@spacer*3);
+        >li{
+          display: block;
+          position: relative;
+          &:before{
+            width:4px;
+            height: 4px;
+            background-color: @primary;
+            position: absolute;
+            left: -1em;
+            top:((@baseFontSize*3) / 2.3);
+            content:'';
+            .border-radius(50%);
+          }
+          .link{
+            display: block;
+            color:darken(@bodyColor,15%);
+            line-height: (@baseFontSize*3);
+            text-decoration: none;
+            -webkit-transition: color 200ms ease-in-out;
+            -moz-transition: color 200ms ease-in-out;
+            -ms-transition: color 200ms ease-in-out;
+            -o-transition: color 200ms ease-in-out;
+            transition: color 200ms ease-in-out;
+            &:hover,&.active{
+              color:@white;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

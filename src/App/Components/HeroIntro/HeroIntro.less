@@ -1,0 +1,91 @@
+@import "../../Styles/export_to_component";
+
+.hero {
+  position: relative;
+  .clearfix;
+  width: 100%;
+  min-height: 60vh;
+  background-color: lighten(@bodyBg, 10%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  backface-visibility: visible;
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    > * {
+      flex: 1;
+    }
+    @media screen and (max-width: 575px) {
+      >*{
+        flex: 1 100%;
+        &.media{
+          order:2;
+        }
+        &.content{
+          order:1;
+        }
+      }
+    }
+    .media {
+      padding: @spacer;
+      position: relative;
+      text-align: center;
+      img {
+        max-width: 600px;
+        height: auto;
+        margin: auto;
+        @media screen and (max-width: 991px) {
+          width: auto;
+          max-height: 300px;
+        }
+        @media screen and (max-width: 575px) {
+          width: auto;
+          max-height: 280px;
+        }
+      }
+    }
+    .content {
+      padding: @spacer;
+
+      .ct {
+        display: block;
+      }
+      .p-tl {
+        margin-top: 0;
+        color: @white;
+        font-size: unit((@baseFontSize*5), @unit);
+        margin-bottom: unit((@spacer / 2), @unit);
+      }
+      p {
+        font-size: unit((@baseFontSize*2), @unit);
+        margin-top: 0;
+        color: @white;
+        margin-bottom: unit((@spacer*2), @unit);
+      }
+      .btn {
+        cursor: pointer;
+        .button-variant(@white, @primary, @primary);
+        .button-size(1em, 2em, unit((@baseFontSize*1.5), @unit), @baseFontSize, 4em);
+      }
+      @media screen and (max-width: 575px) {
+        text-align: center;
+        padding-top: (@spacer*3);
+
+        p {
+          margin-bottom: unit((@spacer), @unit);
+        }
+        .p-tl{
+          font-size: unit((@baseFontSize*4), @unit);
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

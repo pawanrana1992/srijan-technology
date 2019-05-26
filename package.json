@@ -1,0 +1,43 @@
+{
+  "name": "gadget-ecom",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "babel-plugin-import": "^1.11.2",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "normalize.css": "^8.0.1",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-flexbox-grid": "^2.1.2",
+    "react-ionicons": "^3.0.1",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "customize-cra": "^0.2.12",
+    "react-app-rewired": "^2.1.3"
+  }
+}
