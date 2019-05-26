@@ -3,6 +3,7 @@ import IosAt from 'react-ionicons/lib/IosAt';
 import MdCall from 'react-ionicons/lib/MdCall';
 
 import './Footer.less';
+import {Link} from "react-router-dom";
 
 class Footer extends React.Component {
     render() {
@@ -14,12 +15,12 @@ class Footer extends React.Component {
                             Products
                         </div>
                         <ul className={'ul-wrap'}>
-                            <li><a href="" className="link">Mice</a></li>
-                            <li><a href="" className="link">Console</a></li>
-                            <li><a href="" className="link">Keyboard</a></li>
-                            <li><a href="" className="link">Headphone</a></li>
-                            <li><a href="" className="link">Mobile</a></li>
-                            <li><a href="" className="link">Laptop</a></li>
+                            <li><Link to="" className="link">Mice</Link></li>
+                            <li><Link to="" className="link">Console</Link></li>
+                            <li><Link to="" className="link">Keyboard</Link></li>
+                            <li><Link to="" className="link">Headphone</Link></li>
+                            <li><Link to="" className="link">Mobile</Link></li>
+                            <li><Link to="" className="link">Laptop</Link></li>
                         </ul>
 
                     </div>
@@ -28,12 +29,12 @@ class Footer extends React.Component {
                             Brands
                         </div>
                         <ul className={'ul-wrap'}>
-                            <li><a href="" className="link">Mice</a></li>
-                            <li><a href="" className="link">Console</a></li>
-                            <li><a href="" className="link">Keyboard</a></li>
-                            <li><a href="" className="link">Headphone</a></li>
-                            <li><a href="" className="link">Mobile</a></li>
-                            <li><a href="" className="link">Laptop</a></li>
+                            <li><Link to="" className="link">Mice</Link></li>
+                            <li><Link to="" className="link">Console</Link></li>
+                            <li><Link to="" className="link">Keyboard</Link></li>
+                            <li><Link to="" className="link">Headphone</Link></li>
+                            <li><Link to="" className="link">Mobile</Link></li>
+                            <li><Link to="" className="link">Laptop</Link></li>
                         </ul>
                     </div>
                     <div className="col">
@@ -41,12 +42,12 @@ class Footer extends React.Component {
                             Our Store
                         </div>
                         <ul className={'ul-wrap'}>
-                            <li><a href="" className="link">Mice</a></li>
-                            <li><a href="" className="link">Console</a></li>
-                            <li><a href="" className="link">Keyboard</a></li>
-                            <li><a href="" className="link">Headphone</a></li>
-                            <li><a href="" className="link">Mobile</a></li>
-                            <li><a href="" className="link">Laptop</a></li>
+                            <li><Link to="" className="link">Mice</Link></li>
+                            <li><Link to="" className="link">Console</Link></li>
+                            <li><Link to="" className="link">Keyboard</Link></li>
+                            <li><Link to="" className="link">Headphone</Link></li>
+                            <li><Link to="" className="link">Mobile</Link></li>
+                            <li><Link to="" className="link">Laptop</Link></li>
                         </ul>
                     </div>
                     <div className="col subs">
@@ -68,15 +69,15 @@ class Footer extends React.Component {
                                 <div className="lk">
                                     <div className="link">
                                         <MdCall font-size={'3em'}/>
-                                        <a href="" className={'lk-op'}><span>Any question's call us</span>
+                                        <Link to="" className={'lk-op'}><span>Any question's call us</span>
                                             <b>022-3224-3224</b>
-                                        </a>
+                                        </Link>
                                     </div>
                                     <div className="link">
                                         <IosAt font-size={'3em'}/>
-                                        <a href="" className={'lk-op'}><span>Or Send us an email</span>
+                                        <Link to="" className={'lk-op'}><span>Or Send us an email</span>
                                             <b>pawan.pvt.ltd@gmail.com</b>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

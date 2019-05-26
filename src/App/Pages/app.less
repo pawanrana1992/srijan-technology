@@ -72,3 +72,32 @@
     }
   }
 }
+.sidebar{
+  .clearfix;
+  position: fixed;
+  top:69px;
+  right: 0;
+  width: 100%;
+  left:auto;
+  bottom:0;
+  display: block;
+  z-index: 22223;
+  height: calc(100vh - 69px);
+  max-width: 380px;
+  background-color: @white;
+  -webkit-transform: translate(100%);
+  -moz-transform: translate(100%);
+  -ms-transform: translate(100%);
+  -o-transform: translate(100%);
+  transform: translate(100%);
+  .transition(all 200ms ease-in-out);
+  &.active{
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
+    transform: translate(0);
+    .box-shadow(-2.5em 0 2em rgba(@black,0.5));
+
+  }
+}

@@ -1,18 +1,24 @@
 import React from "react";
 import './product-card.less';
-import MdStarOutline from 'react-ionicons/lib/MdStarOutline';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import {Actions} from "../../../Actions/Actions";
 
 class ProductCard extends React.Component{
+    addToCart = (e)=>{
+        e.preventDefault();
+        this.props.dispatch({type:Actions.ADD_TO_CART,payload:this.props})
+
+    };
     render() {
-        const { id, title, details,category, price,offer,offerPrice,color,condition} = this.props;
+        const { id, title, category,offerPrice,color} = this.props;
         return (
             <div className={`product-card pr-${id}`}>
                 <div className="wrap">
                     <div className="body">
                         <div className="top">
                             <span className={'tg'}>{category[0]}</span>
-                            <span className={'lbl'}><MdStarOutline font-size={'2em'} color={'#ffffff'}/></span>
+                            {/*<span className={'lbl'}><MdStarOutline font-size={'2em'} color={'#ffffff'}/></span>*/}
                         </div>
                         <div className="img">
                             <div className="content">
@@ -27,8 +33,8 @@ class ProductCard extends React.Component{
                         </div>
                         <div className="overlay">
                             <div className="body-act">
-                                <button className={'btn'}>Quick Look</button>
-                                <button className={'btn'}>Add To Cart</button>
+                                {/*<button className={'btn'}>Quick Look</button>*/}
+                                <button onClick={(e)=>this.addToCart (e)} className={'btn'}>Add To Cart</button>
                             </div>
                         </div>
                     </div>
@@ -58,4 +64,4 @@ ProductCard.PropType = {
     condition: PropTypes.string.isRequired,
 };
 
-export default ProductCard;
+export default connect()(ProductCard);

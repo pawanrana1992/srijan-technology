@@ -46,7 +46,7 @@ export const Products = [
     },
     {
         id: 5,
-        title: `Qwerty VR BOX Virtual Reality 3D Glasses`,
+        title: `VR BOX Virtual Reality 3D Glasses`,
         details: `Good product!!!I am really happy with Flipkart!!!Soon i will review this amazing product on my channel and upload it(Search my channel named "R4Reviews" on youtube if you wanted to see my review).Thank you so much!!!`,
         category: ['Vr', 'Electronics'],
         price: '7300',
@@ -158,7 +158,7 @@ export const Products = [
     },
     {
         id: 15,
-        title: `Qwerty VR BOX Virtual Reality 3D Glasses`,
+        title: `VR BOX Virtual Reality 3D Glasses`,
         details: `Good product!!!I am really happy with Flipkart!!!Soon i will review this amazing product on my channel and upload it(Search my channel named "R4Reviews" on youtube if you wanted to see my review).Thank you so much!!!`,
         category: ['Vr', 'Electronics'],
         price: '7300',

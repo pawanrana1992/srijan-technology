@@ -3,9 +3,17 @@ import './NavigationDefault.less';
 import IosSearch from 'react-ionicons/lib/IosSearch';
 import IosSend from 'react-ionicons/lib/IosSend';
 import MdCart from 'react-ionicons/lib/MdCart';
+import MdClose from 'react-ionicons/lib/MdClose';
+import {connect} from 'react-redux';
+import {Actions} from "../../../Actions/Actions";
+import {Link} from "react-router-dom";
 
 class NavigationDefault extends React.Component {
+    handleSideBarCart = (e)=>{
+       this.props.dispatch({type:Actions.SHOW_HIDE_PRODUCT_SIDEBAR_CART})
+    };
     render() {
+        console.log('in navigation:', this.props);
         return (
             <nav className={'nav nav__default'}>
                 <div className="nav__wrap">
@@ -13,7 +21,7 @@ class NavigationDefault extends React.Component {
                         <ul className={'navs'}>
                             <li className="nav_list">
                                 <div className="brand link">
-                                    <a href="#"><span style={{fontWeight:'700',color:'#ffffff'}}>Srijan</span></a>
+                                    <Link to="#"><span style={{fontWeight:'700',color:'#ffffff'}}>Srijan</span></Link>
                                 </div>
                             </li>
                             <li className={'nav_list res'}>
@@ -49,13 +57,15 @@ class NavigationDefault extends React.Component {
                                 </div>
                             </li>
                             <li className={'nav_list'}>
-                                <div className="link">
+                                <div className="link" onClick={(e)=>this.handleSideBarCart(e)}>
                                     <div className="ic circle-bg">
-                                        <MdCart fontSize="1.6em"/>
+                                        {this.props.ShowSideBarCart ? <MdClose fontSize="1.6em"/>
+                                        :<MdCart fontSize="1.6em"/>}
+
                                     </div>
                                     <div className="dt cart">
-                                        <span>2 Products</span>
-                                        <b><span>12345</span><span>$</span></b>
+                                        <span>{this.props.ProductCart.totalItems} &nbsp; Products</span>
+                                        <b><span>{this.props.ProductCart.totalAmount}</span><span>$</span></b>
                                     </div>
                                 </div>
                             </li>
@@ -71,13 +81,13 @@ class NavigationDefault extends React.Component {
                 </div>
                 <div className="nav__inline">
                     <ul className="nav__inline_wrap">
-                        <li className={'link'}><a href="">Speakers</a></li>
-                        <li className={'link'}><a href="" className={'active'}>Mobile</a></li>
-                        <li className={'link'}><a href="">Laptop</a></li>
-                        <li className={'link'}><a href="">Camera</a></li>
-                        <li className={'link'}><a href="">Console</a></li>
-                        <li className={'link'}><a href="">VR Ready</a></li>
-                        <li className={'link'}><a href="">Watches</a></li>
+                        <li className={'link'}><Link to="">Speakers</Link></li>
+                        <li className={'link'}><Link to="" className={'active'}>Mobile</Link></li>
+                        <li className={'link'}><Link to="">Laptop</Link></li>
+                        <li className={'link'}><Link to="">Camera</Link></li>
+                        <li className={'link'}><Link to="">Console</Link></li>
+                        <li className={'link'}><Link to="">VR Ready</Link></li>
+                        <li className={'link'}><Link to="">Watches</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -85,5 +95,7 @@ class NavigationDefault extends React.Component {
 
     }
 }
-
-export default NavigationDefault;
+const mapStateToProps = (state)=>{
+    return {ShowSideBarCart:state.ShowSideBarCart.show,ProductCart:state.ProductCart}
+};
+export default connect(mapStateToProps)(NavigationDefault);

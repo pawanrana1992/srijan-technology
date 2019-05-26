@@ -10,7 +10,7 @@ import {Products} from '../../MocData/MocData';
 class IndexPage extends React.PureComponent{
     render() {
         return (
-            <div className={'index page'}>
+            <div className={'index page'} style={{marginTop:'110px'}}>
                 <HeroIntro/>
                 <IntroGrid/>
                 <Grid className="popular-tl" fluid>
